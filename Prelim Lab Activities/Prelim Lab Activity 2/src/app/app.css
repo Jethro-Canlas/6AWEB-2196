@@ -1,0 +1,22 @@
+.cv-container {
+  max-width: 950px;
+  margin: 0 auto 50px;
+  padding: 50px 70px;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: #fff;
+  color: #2d3748;
+  line-height: 1.7;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.cv-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+}

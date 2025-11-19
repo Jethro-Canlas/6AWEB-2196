@@ -1,0 +1,69 @@
+.cv-header {
+  text-align: center;
+  background-color: white;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  margin: 20px auto 50px;
+  border-radius: 20px;
+  padding-top: 10px;
+  border-image: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+  max-width: 1700px;
+}
+.name {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-info {
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #f7fafc;
+  border-radius: 25px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+.contact-item:hover {
+  border-color: #667eea;
+  background: #edf2f7;
+  transform: translateY(-2px);
+}
+.contact-item strong {
+  font-weight: 600;
+  color: #2d3748;
+  margin-right: 5px;
+}
+.contact-item a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.contact-item a:hover {
+  color: #5a67d8;
+}
+.separator {
+  display: none;
+}
+.divider {
+  width: 80%;
+  height: 3px;
+  margin: 25px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+}

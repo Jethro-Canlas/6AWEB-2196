@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  min-height: 100vh;
+}
+
+/* Content */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.profile-section,
+.skills-section,
+.technical-skills {
+  margin-bottom: 35px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 30px 25px;
+  }
+  .name {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-container {
+    padding: 20px 15px;
+  }
+  .name {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .contact-info {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .profile-text,
+  .tech-items {
+    font-size: 0.9rem;
+  }
+}
+
+@media print {
+  .cv-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .name {
+    font-size: 2.5rem;
+  }
+  .section-title {
+    page-break-after: avoid;
+  }
+  .profile-section,
+  .skills-section,
+  .technical-skills {
+    page-break-inside: avoid;
+  }
+}
