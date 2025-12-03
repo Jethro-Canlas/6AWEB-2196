@@ -1,0 +1,113 @@
+<div class="directive-container">
+  <table>
+    <tr>
+      <td>
+        @if(isStaticNoteVisible===true) {
+        <h2 class="truth-display">This is truth</h2>
+        } @else {
+        <h2 class="false-display">This is false</h2>
+        }
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        @if(isNoteVisible===true) {
+        <p class="note-content">This is a note!</p>
+        }
+      </td>
+      <td>
+        <button (click)="showNote()">Show Note</button>
+      </td>
+      <td>
+        <button (click)="hideNote()">Hide Note</button>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <button class="toggle-btn" (click)="toggleNote()">
+        {{ isParagraphVisible ? 'Hide' : 'Show' }}
+      </button>
+
+      @if (isParagraphVisible) {
+      <p class="note-content">This is the paragraph content.</p>
+      }
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        @if (monthNameStatic == 'Jan') {
+        <p class="month-display">January</p>
+        } @else if (monthNameStatic == 'Feb') {
+        <p class="month-display">February</p>
+        } @else if (monthNameStatic == 'Mar') {
+        <p class="month-display">March</p>
+        }
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        @if (monthNameDynamic == 'Jan') {
+        <p class="month-display">January</p>
+        } @else if (monthNameDynamic == 'Feb') {
+        <p class="month-display">February</p>
+        } @else if (monthNameDynamic == 'Mar') {
+        <p class="month-display">March</p>
+        } @else {
+        <p class="wrong-input">Wrong Input!</p>
+        }
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="monthNameDynamic" />
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        <ul>
+          @for (item of cityList; track $index) {
+          <li>{{ item }}</li>
+          }
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Cause</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of hitList; track $index) {
+      <tr>
+        <td class="index-cell">{{ $index + 1 }}</td>
+        <td class="name-cell">{{ item.name }}</td>
+        <td class="cause-cell">{{ item.cause }}</td>
+        <td>
+          @if (item.isActive == true ) {
+          <p class="status-active">Active</p>
+          } @else {
+          <p class="status-inactive">Inactive</p>
+          }
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
