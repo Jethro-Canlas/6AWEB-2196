@@ -1,0 +1,7 @@
+/* Global stylesheet — enable Tailwind layers */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global custom styles below if needed. */

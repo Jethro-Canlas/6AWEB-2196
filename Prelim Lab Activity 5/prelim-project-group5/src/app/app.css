@@ -1,0 +1,11 @@
+/* Minimal CSS — Tailwind utility classes handle layout and visuals */
+
+/* Provide a tiny helper for screen-reader-only text */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;
+}
+
+/* If you need a few custom overrides, add them here. Keep most styling in templates using Tailwind. */
+
