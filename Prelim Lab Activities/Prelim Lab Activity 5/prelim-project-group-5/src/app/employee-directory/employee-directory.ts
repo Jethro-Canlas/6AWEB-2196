@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './employee-directory.css',
 })
 export class EmployeeDirectory {
-
+  phenomeman = '/Phenomeman.webp';
+  sweettalker = '/Sweettalker.webp';
+  equilibrium = '/Equilibrium.webp';
+  pompom = '/Pom_Pom.webp';
+  brickhouse = '/Brickhouse.webp';
+  brainbook = '/Brainbook.webp';
 }

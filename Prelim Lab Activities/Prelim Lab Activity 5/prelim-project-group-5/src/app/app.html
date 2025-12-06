@@ -1,43 +1,37 @@
-<header class="bg-white shadow-sm">
+<header class="bg-blue-600 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-20">
       <div class="flex items-center">
         <a routerLink="/" class="flex items-center gap-3">
           <img [src]="imageUrl" alt="SDN Logo" class="h-10 w-auto" />
-          <span class="text-lg font-semibold text-gray-900">Prelim Project</span>
+          <span class="text-lg font-semibold text-white">Superhero Dispatch Network</span>
         </a>
       </div>
-
       <div class="hidden md:flex md:items-center md:space-x-4">
-        <a routerLink="/" routerLinkActive="text-white bg-gray-900" class="text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">Home</a>
-        <a routerLink="/employee-directory" routerLinkActive="text-white bg-gray-900" class="text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">Employees</a>
-        <a routerLink="/about" routerLinkActive="text-white bg-gray-900" class="text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">About</a>
+        <a routerLink="/" class="text-2xl font-tasa-orbiter font-semibold text-white hover:bg-blue-700 px-3 py-2 rounded">Home</a>
+        <a routerLink="/employee-directory" class="text-2xl font-semibold font-tasa-orbiter text-white hover:bg-blue-700 px-3 py-2 rounded">Employees</a>
+        <a routerLink="/about" class="text-2xl font-semibold text-white hover:bg-blue-700 px-3 py-2 rounded">About</a>
       </div>
-
-      <div class="md:hidden">
-        <button (click)="toggleMenu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <!-- Icon: simple hamburger -->
-          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile menu, show/hide based on menuOpen state -->
-  <div id="mobile-menu" class="md:hidden" [class.hidden]="!menuOpen">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a routerLink="/" (click)="menuOpen = false" class="block text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">Home</a>
-      <a routerLink="/employee-directory" (click)="menuOpen = false" class="block text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">Employees</a>
-      <a routerLink="/about" (click)="menuOpen = false" class="block text-gray-700 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md">About</a>
     </div>
   </div>
 </header>
 
-<main class="py-6">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <router-outlet></router-outlet>
-  </div>
+<main class="py-0">
+  <router-outlet></router-outlet>
 </main>
+
+<footer class="bg-blue-600 text-white mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-2">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <img [src]="imageUrl" alt="SDN Logo" class="h-8 w-auto" />
+        <span class="font-semibold">Superhero Dispatch Network</span>
+      </div>
+      <div class="flex gap-4 text-sm">
+        <a href="https://www.adhocla.com/" target="_blank" class="hover:text-blue-200">AdHoc</a>
+        <a href="https://store.steampowered.com/app/2592160/Dispatch/" target="_blank" class="hover:text-blue-200">Steam</a>
+      </div>
+    </div>
+    <p class="text-xs text-blue-200">© 2025 SDN. All rights reserved.</p>
+  </div>
+</footer>
