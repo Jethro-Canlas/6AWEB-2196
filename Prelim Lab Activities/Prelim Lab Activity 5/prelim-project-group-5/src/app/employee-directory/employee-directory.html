@@ -6,74 +6,33 @@
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
   <h1 class="font-racing-sans text-4xl">MANAGER</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="blondeblazer" alt="blondeblazer"
+  <div class="grid grid-cols-3 gap-6" (mouseleave)="clearHover()">
+    <div></div>
+    <div *ngIf="manager" class="relative group overflow-hidden shadow-lg cursor-pointer"
+      (mouseenter)="setHover(manager)">
+      <img [src]="manager.img" [alt]="manager.name"
         class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
       <div
         class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Blonde Blazer
+        {{ manager.name }}
       </div>
     </div>
+    <div></div>
   </div>
 </div>
 
-<div class="bg-orange-500">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="bg-gradient-to-b from-orange-500 to-orange-600">
+  <div class="max-w-6xl mx-auto px-4 lg:px-8 py-8">
     <h1 class="text-white font-racing-sans text-4xl m-10">DTLA BRANCH</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="phenomaman" alt="phenomaman"
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" (mouseleave)="clearHover()">
+      <div *ngFor="let hero of dtlaHeroes" class="relative group overflow-hidden shadow-lg cursor-pointer"
+        (mouseenter)="setHover(hero)">
+        <img [src]="hero.img" [alt]="hero.name"
           class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
         <div
           class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Phenomaman
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="sweettalker" alt="sweettalker"
-          class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-        <div
-          class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Sweettalker
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="equilibrium" alt="equilibrium"
-          class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-        <div
-          class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Equilibrium
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="pompom" alt="pompom"
-          class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-        <div
-          class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Pom Pom
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="brickhouse" alt="brickhouse"
-          class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-        <div
-          class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Brickhouse
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden shadow-lg">
-        <img [src]="brainbook" alt="brainbook"
-          class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-        <div
-          class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Brainbook
+          {{ hero.name }}
         </div>
       </div>
     </div>
@@ -82,71 +41,39 @@
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
   <h1 class="font-racing-sans text-4xl m-10">PHOENIX PROGRAM</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" (mouseleave)="clearHover()">
 
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="coupe" alt="coupe"
+    <div *ngFor="let hero of phoenixHeroes" class="relative group overflow-hidden shadow-lg cursor-pointer"
+      (mouseenter)="setHover(hero)">
+      <img [src]="hero.img" [alt]="hero.name"
         class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
       <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Coupé
-      </div>
-    </div>
-    
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="flambae" alt="flambae"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Flambae
+        {{ hero.name }}
       </div>
     </div>
 
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="golem" alt="golem"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Golem
+  </div>
+</div>
+
+<div *ngIf="hoveredHero" class="fixed top-24 right-4 w-80 bg-white border border-orange-200 overflow-hidden z-40">
+  <div class="w-full h-48 bg-orange-200 flex items-center justify-center">
+    <img [src]="hoveredHero.img" [alt]="hoveredHero.name" class="max-h-48 max-w-full object-contain">
+  </div>
+  <div class="p-4 space-y-2">
+    <div class="flex items-start justify-between gap-2">
+      <h3 class="font-racing-sans text-2xl text-gray-900">{{ hoveredHero.name }}</h3>
+      <div class="flex flex-col items-end gap-1">
+        <span class="text-xs font-semibold bg-orange-100 text-orange-700 px-2 py-1 rounded" *ngIf="hoveredHero.titles[0]">{{ hoveredHero.titles[0] }}</span>
+        <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-1 rounded" *ngIf="hoveredHero.titles[1]">{{ hoveredHero.titles[1] }}</span>
       </div>
     </div>
-
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="invisigal" alt="invisigal"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Invisigal
-      </div>
+    <div class="text-xs text-gray-800">
+      <span class="font-semibold mr-1">Powers:</span>
+      <span class="inline-flex flex-wrap gap-1 align-middle">
+        <span *ngFor="let power of hoveredHero.powers" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">{{ power }}</span>
+      </span>
     </div>
-
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="malevola" alt="malevola"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Malevola
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="prism" alt="prism"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Prism
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="punchup" alt="Punch Up"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Punch Up
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden shadow-lg">
-      <img [src]="sonar" alt="sonar"
-        class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div class="font-racing-sans text-2xl absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Sonar
-      </div>
-    </div>
-
+    <p class="text-sm text-gray-700 leading-relaxed">{{ hoveredHero.bio }}</p>
+    <p class="text-xs text-gray-500">Hover another hero to update this panel.</p>
   </div>
 </div>

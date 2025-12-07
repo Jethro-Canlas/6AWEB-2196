@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
-
+  heroes = './hero.jpg';
+  logo = './SDN_logo_transparent.webp';
 }

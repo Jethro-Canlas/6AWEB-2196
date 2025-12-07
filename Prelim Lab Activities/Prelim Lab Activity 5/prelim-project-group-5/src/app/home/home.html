@@ -1,9 +1,73 @@
 <section class="relative w-full h-96">
   <img [src]="heroImage" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center px-6 lg:px-12 text-white">
+    <h1 class="font-racing-sans text-5xl font-bold mb-4">
+      Let SDN be your rock.
+    </h1>
+    <p class="bg-orange-500 font-tasa-orbiter font-bold text-lg max-w-xl p-4 opacity-90 outline outline-1 outline-white outline-offset-4">
+      Call 1-(424)-488-0883
+    </p>
+  </div>
 </section>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-  <h1 class="font-racing-sans text-5xl font-bold mb-4">Welcome</h1>
-  <p>Home page content goes here.</p>
+<div class="absolute top-96 left-0 right-0 h-64 bg-orange-500 -z-10 pointer-events-none"></div>
+  
+<div class="relative mx-auto px-20  m-12"> 
+  <h1 class="font-racing-sans text-white text-5xl font-bold mb-4">Featured News</h1>
+  <div class="grid grid-cols-3 gap-6 mt-10">
+    <div (click)="navigateToError()" class="bg-white shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-200 cursor-pointer">
+      <img [src]="mechaImage" alt="Mecha-Man" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Mecha-Man or Mecha-Quitter?</h3>
+        <p class="text-gray-600 text-sm">Mecha-Man finally breaks 2 months of silence after...</p>
+      </div>
+    </div>
+    <div (click)="navigateToError()" class="bg-white shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-200 cursor-pointer">
+      <img [src]="shroudImage" alt="Shroud" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Supervillain Shroud on the loose</h3>
+        <p class="text-gray-600 text-sm">Terror on Los Angeles rampant as Red Ring mastermind...</p>
+      </div>
+    </div>
+    <div (click)="navigateToError()" class="bg-white shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-200 cursor-pointer">
+      <img [src]="phenomamanImage" alt="Phenomaman" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">What is going on with Phenomaman?</h3>
+        <p class="text-gray-600 text-sm">Phenomaman has been reported being even stranger...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-2 mt-20">
+  <div class="bg-gradient-to-t from-orange-600 to-orange-500 p-10 -skew-x-6 overflow-hidden">
+    <h1 class="font-racing-sans text-5xl text-center text-white m-10">Have what it takes?</h1>
+    <p class="text-center text-lg text-white">Fight or serve on the frontlines, or support from behind the scenes, SDN always needs adequate manpower to stay ahead of crime and villainy. Powers or no powers, SDN has a place for you! </p>
+  </div>
+  <div class="p-8 bg-gradient-to-b from-blue-500 to-blue-700 -skew-x-6  overflow-hidden">
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white overflow-hidden">
+        <img [src]="heroActionImage" alt="Hero" class="w-full h-32 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Hero</h3>
+          <p class="text-gray-600 text-sm">Join the frontlines and fight for justice.</p>
+        </div>
+      </div>
+      <div class="bg-white overflow-hidden">
+        <img [src]="dispatchImage" alt="Dispatch" class="w-full h-32 object-cover">
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Dispatcher</h3>
+          <p class="text-gray-600 text-sm">Coordinate heroes and keep the city safe.</p>
+        </div>
+      </div>
+      <div class="bg-white overflow-hidden col-span-2 md:col-span-2 max-w-sm mx-auto">
+        <img [src]="investigationImage" alt="Join Dispatch" class="w-full h-32 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="font-bold text-xl mb-2">Phoenix Program</h3>
+          <p class="text-gray-600 text-sm">Rehabilitate and be a proper hero.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
