@@ -1,0 +1,51 @@
+<!-- Home/Main page: hero banner + destination cards -->
+<section class="relative h-72 md:h-96 overflow-hidden">
+  <img [src]="heroImage" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center text-white">
+    <h1 class="text-3xl md:text-5xl font-bold">Research Conferences</h1>
+    <p class="mt-2 text-lg md:text-2xl">Join our online events this 2026!</p>
+    <p class="mt-4 text-sm md:text-base">Early-Bird Registration</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Join our Research Conferences around the Globe!</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <article class="bg-white shadow rounded overflow-hidden">
+      <img [src]="cardImages[0]" alt="France" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold">France</h3>
+        <p class="mt-2 text-sm text-gray-600">The largest country in Western Europe, France has a long heritage of arts and architecture and hosts many academic events.</p>
+        <p class="mt-3 text-xs text-gray-500">Architecture and Fine Arts</p>
+      </div>
+    </article>
+
+    <article class="bg-white shadow rounded overflow-hidden">
+      <img [src]="cardImages[1]" alt="Seoul" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold">Seoul</h3>
+        <p class="mt-2 text-sm text-gray-600">A dynamic capital combining modernity and tradition—home to many research and cultural conferences.</p>
+        <p class="mt-3 text-xs text-gray-500">Humanities and Arts</p>
+      </div>
+    </article>
+
+    <article class="bg-white shadow rounded overflow-hidden">
+      <img [src]="cardImages[2]" alt="San Francisco" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold">San Francisco</h3>
+        <p class="mt-2 text-sm text-gray-600">A technology and innovation hub with many academic-industrial collaborations and conferences.</p>
+        <p class="mt-3 text-xs text-gray-500">Science and Technology</p>
+      </div>
+    </article>
+
+    <article class="bg-white shadow rounded overflow-hidden">
+      <img [src]="cardImages[3]" alt="Boston" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold">Boston</h3>
+        <p class="mt-2 text-sm text-gray-600">Famous for its universities and academic community—an ideal place for conferences on medicine and engineering.</p>
+        <p class="mt-3 text-xs text-gray-500">Engineering and Tech</p>
+      </div>
+    </article>
+  </div>
+</section>

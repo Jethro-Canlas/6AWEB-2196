@@ -1,0 +1,19 @@
+<header class="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-blue-800 shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+    <div class="flex items-center space-x-4">
+      <a routerLink="/" class="text-lg text-white font-helvetica font-semibold hover:bg-blue-700 px-3 py-2 rounded transition-transform duration-150">Home</a>
+      <a routerLink="/partners" class="text-lg text-white font-helvetica font-semibold hover:bg-blue-700 px-3 py-2 rounded transition-transform duration-150">Our Partners</a>
+      <a routerLink="/about" class="text-lg text-white font-helvetica font-semibold hover:bg-blue-700 px-3 py-2 rounded transition-transform duration-150">About the Organization</a>
+      <a routerLink="/join" class="text-lg text-white font-helvetica font-semibold hover:bg-blue-700 px-3 py-2 rounded transition-transform duration-150">Join Us!</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-20 min-h-screen">
+  <!-- router outlet - each route renders its component's template -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="border-t py-6 mt-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-600">© 2026 Research Conferences — All rights reserved.</div>
+</footer>
