@@ -1,0 +1,33 @@
+<!-- filepath: e:\6AWEB-2196\Midterm Lab Activities\Midterm Lab Activity 5\ng-httpclient-demo\src\app\app.html -->
+<div class="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+  <div class="max-w-5xl w-full p-8 bg-white rounded-xl shadow-lg">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">USERS</h2>
+
+    <div *ngIf="httpusers?.length; else emptyState" class="overflow-x-auto">
+      <table class="min-w-full border-collapse text-sm md:text-base">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="px-6 py-3 text-center text-sm font-semibold text-gray-600">ID</th>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Name</th>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Email</th>
+            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-600">Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of httpusers; trackBy: trackById" class="border-b hover:bg-gray-50">
+            <td class="py-3 px-6 text-center text-sm md:text-base text-gray-700">{{ user.id }}</td>
+            <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.name }}</td>
+            <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.email }}</td>
+            <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.username }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="text-center py-12">
+        <p class="text-gray-500">No users found. Loading or there was an error fetching users.</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
