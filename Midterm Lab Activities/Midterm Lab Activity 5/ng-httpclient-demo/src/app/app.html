@@ -14,12 +14,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of httpusers; trackBy: trackById" class="border-b hover:bg-gray-50">
+          @for (user of httpusers; track user.id) {
+          <tr class="border-b hover:bg-gray-50">
             <td class="py-3 px-6 text-center text-sm md:text-base text-gray-700">{{ user.id }}</td>
             <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.name }}</td>
             <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.email }}</td>
             <td class="py-3 px-6 text-sm md:text-base text-gray-700">{{ user.username }}</td>
           </tr>
+        }
         </tbody>
       </table>
     </div>
