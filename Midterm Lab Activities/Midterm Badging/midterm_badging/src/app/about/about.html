@@ -1,5 +1,44 @@
-<section>
-  <h2>{{ 'About the Portal' | uppercase }}</h2>
-  <p>Community Help Desk Portal — current time: {{ now | date:'full' }}</p>
-  <p>This portal lists announcements and service tickets sourced from a remote API.</p>
+<section class="container mx-auto px-6 py-8">
+  <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl shadow-md p-10">
+    <h2 class="text-4xl font-bold text-gray-800 mb-4">{{ 'About the Portal' | uppercase }}</h2>
+
+    <div class="space-y-4 text-lg">
+      <p class="text-gray-700 flex items-center gap-2">
+        <span class="text-2xl">🕐</span>
+        <strong>Current time:</strong>
+        <span class="text-blue-600 font-semibold">{{ now | date:'full' }}</span>
+      </p>
+
+      <div class="bg-white rounded-lg p-6 shadow-sm mt-6">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">What is this portal?</h3>
+        <p class="text-gray-600 leading-relaxed">
+          The <strong>Community Help Desk Portal</strong> is a centralized platform for managing and viewing
+          announcements and service tickets. All data is sourced from a remote API, demonstrating modern
+          web development practices with Angular, RxJS observables, and responsive design.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg p-6 shadow-sm">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Features</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span>Real-time data fetching with caching</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span>Advanced search and filtering</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span>Responsive design with Tailwind CSS</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span>Custom Angular pipes for text formatting</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>

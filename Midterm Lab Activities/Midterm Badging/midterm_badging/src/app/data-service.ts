@@ -17,16 +17,11 @@ export class DataService {
   private posts$?: Observable<Post[]>;
   private readonly API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-  // expose errors so components can show an error state
   private errorSubject = new BehaviorSubject<string | null>(null);
   public readonly error$ = this.errorSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Returns an Observable<Post[]> and caches the network request using shareReplay(1).
-   * Subsequent subscribers will receive the cached value and the API won't be re-fetched.
-   */
   getPosts(): Observable<Post[]> {
     if (!this.posts$) {
       this.posts$ = this.http.get<Post[]>(this.API_URL).pipe(

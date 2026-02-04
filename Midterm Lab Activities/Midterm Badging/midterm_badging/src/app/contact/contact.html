@@ -1,25 +1,58 @@
-<section>
-  <h2>Contact Us</h2>
-  <form (ngSubmit)="onSubmit()">
-    <label>
-      Name:
-      <input name="name" [(ngModel)]="model.name" />
-    </label>
-    <label>
-      Email:
-      <input name="email" [(ngModel)]="model.email" type="email" />
-    </label>
-    <label>
-      Message:
-      <textarea name="message" [(ngModel)]="model.message"></textarea>
-    </label>
-    <button type="submit">Submit</button>
-  </form>
+<section class="container mx-auto px-6 py-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="bg-white rounded-xl shadow-md p-8">
+      <h2 class="text-4xl font-bold text-gray-800 mb-6">📬 Contact Us</h2>
 
-  <h3>Form preview</h3>
-  <div>
-    <div><strong>Name:</strong> {{ model.name | uppercase }}</div>
-    <div><strong>Email:</strong> {{ model.email }}</div>
-    <div><strong>Message:</strong> {{ model.message }}</div>
+      <form (ngSubmit)="onSubmit()" class="space-y-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Name</label>
+          <input name="name"
+                 [(ngModel)]="model.name"
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                 placeholder="Enter your full name" />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Email</label>
+          <input name="email"
+                 [(ngModel)]="model.email"
+                 type="email"
+                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
+                 placeholder="your.email@example.com" />
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Message</label>
+          <textarea name="message"
+                    [(ngModel)]="model.message"
+                    rows="5"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                    placeholder="Tell us what you need help with..."></textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
+          📤 Submit Message
+        </button>
+      </form>
+    </div>
+
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-md p-8 mt-6">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">📋 Form Preview</h3>
+      <div class="space-y-3 bg-white rounded-lg p-6">
+        <div class="flex items-start gap-3">
+          <span class="font-bold text-gray-700 min-w-[80px]">Name:</span>
+          <span class="text-blue-700 font-semibold">{{ model.name | uppercase }}</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="font-bold text-gray-700 min-w-[80px]">Email:</span>
+          <span class="text-gray-600">{{ model.email || '(not provided)' }}</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="font-bold text-gray-700 min-w-[80px]">Message:</span>
+          <span class="text-gray-600">{{ model.message || '(not provided)' }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
