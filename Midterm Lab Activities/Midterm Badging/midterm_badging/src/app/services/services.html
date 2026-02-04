@@ -1,1 +1,20 @@
-<p>services works!</p>
+<section>
+  <h2>Services / Announcements</h2>
+
+  <label>
+    Search:
+    <input type="text" (input)="onSearch($any($event.target).value)" placeholder="search title or body" />
+  </label>
+
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="(error$ | async) as err">
+    <p style="color:tomato">Error: {{ err }}</p>
+  </div>
+
+  <ul>
+    <li *ngFor="let post of posts$ | async">
+      <div><strong>#{{ post.id }} {{ post.title | uppercase }}</strong></div>
+      <div>{{ post.body | truncate:120 }}</div>
+    </li>
+  </ul>
+</section>

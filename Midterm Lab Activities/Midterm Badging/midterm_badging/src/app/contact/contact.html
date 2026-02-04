@@ -1,1 +1,25 @@
-<p>contact works!</p>
+<section>
+  <h2>Contact Us</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input name="name" [(ngModel)]="model.name" />
+    </label>
+    <label>
+      Email:
+      <input name="email" [(ngModel)]="model.email" type="email" />
+    </label>
+    <label>
+      Message:
+      <textarea name="message" [(ngModel)]="model.message"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Form preview</h3>
+  <div>
+    <div><strong>Name:</strong> {{ model.name | uppercase }}</div>
+    <div><strong>Email:</strong> {{ model.email }}</div>
+    <div><strong>Message:</strong> {{ model.message }}</div>
+  </div>
+</section>

@@ -6,9 +6,10 @@ import { Services } from './services/services';
 import { Contact } from './contact/contact';
 
 export const routes: Routes = [
-  {path: '', component: Home },
-    {path: 'about', component: About },
-    {path: 'services', component: Services },
-    {path : 'contact', component: Contact},
-    {path: '**', component: Home }
+  { path: 'home', component: Home },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'about', component: About },
+  { path: 'services', component: Services },
+  { path: 'contact', component: Contact },
+  { path: '**', redirectTo: 'home' }
 ];

@@ -180,7 +180,16 @@
       margin-block: 1.5rem;
     }
   }
+
+  a.active { font-weight: 700; color: #0b5cff; }
 </style>
+
+<nav style="display:flex;gap:1rem;padding:0.5rem 1rem;border-bottom:1px solid #eee;">
+  <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/services" routerLinkActive="active">Services</a>
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+</nav>
 
 <main class="main">
   <div class="content">
