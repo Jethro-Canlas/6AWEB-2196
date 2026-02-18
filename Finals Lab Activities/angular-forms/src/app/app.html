@@ -1,6 +1,33 @@
-<header>
-  <a [routerLink]="['/template-demo']" routerLinkActive="router-link-active" >Template Demo</a>
-  <a [routerLink]="['/reactive-demo']" routerLinkActive="router-link-active" >Reactive Demo</a>
+<header class="app-header">
+  <div class="app-header-inner">
+    <!-- Decorative top border -->
+    <div class="app-header-topline"></div>
+
+    <!-- Logo / Title -->
+    <div class="app-header-brand">
+      <span class="app-header-rune">ᚱ</span>
+      <span class="app-header-title">Angular Forms</span>
+      <span class="app-header-rune">ᚱ</span>
+    </div>
+
+    <!-- Nav -->
+    <nav class="app-header-nav">
+      <a [routerLink]="['/template-demo']" routerLinkActive="app-nav-active" class="app-nav-link">
+        <span class="app-nav-icon">✦</span> Template Demo
+      </a>
+      <div class="app-nav-sep">|</div>
+      <a [routerLink]="['/reactive-demo']" routerLinkActive="app-nav-active" class="app-nav-link">
+        <span class="app-nav-icon">✦</span> Reactive Demo
+      </a>
+      <div class="app-nav-sep">|</div>
+      <a [routerLink]="['/custom-form']" routerLinkActive="app-nav-active" class="app-nav-link">
+        <span class="app-nav-icon">✦</span> Custom Form
+      </a>
+    </nav>
+
+    <!-- Decorative bottom border -->
+    <div class="app-header-bottomline"></div>
+  </div>
 </header>
 
 <main class="py-0">

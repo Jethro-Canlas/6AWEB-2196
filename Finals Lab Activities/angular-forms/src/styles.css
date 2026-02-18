@@ -1,3 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
 @import "tailwindcss";
+ @theme {
+  --color-judge: #4b3d2a;
+  --color-gimblet: #b2a66c;
+  --color-akaroa: #d5c7a4;
+  --color-grain: #e2d6b6;
+  --color-beige: #f5f3e0;
+
+  --font-meta: 'Metamorphous', cursive;
+ }
+
+ body {
+  font-family: var(--font-meta);
+  background-color: var(--color-beige);
+  color: var(--color-judge);
+ }

@@ -1,0 +1,4 @@
+.card { background: #ffffff; }
+.input { box-sizing: border-box; }
+.error { color: #dc2626; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }

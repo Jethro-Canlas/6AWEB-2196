@@ -1,0 +1,275 @@
+/* ── Page wrapper ── */
+.er-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1rem 4rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(178,166,108,0.18) 0%, transparent 70%),
+    var(--color-beige);
+}
+
+/* ── Card ── */
+.er-card {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(160deg, #2a2118 0%, #1a160f 100%);
+  border: 2px solid var(--color-gimblet);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px #0006,
+    0 0 40px rgba(178,166,108,0.15),
+    inset 0 0 80px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.er-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 2rem 1.2rem;
+  border-bottom: 1px solid rgba(178,166,108,0.3);
+  text-align: center;
+}
+.er-rune-left,
+.er-rune-right {
+  font-size: 2.4rem;
+  color: var(--color-gimblet);
+  opacity: 0.6;
+  line-height: 1;
+  user-select: none;
+}
+.er-eyebrow {
+  font-family: var(--font-meta);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gimblet);
+  margin-bottom: 0.3rem;
+}
+.er-title {
+  font-family: var(--font-meta);
+  font-size: 1.9rem;
+  color: var(--color-akaroa);
+  margin: 0;
+  text-shadow: 0 0 24px rgba(178,166,108,0.4);
+  letter-spacing: 0.05em;
+}
+.er-divider {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gimblet), transparent);
+  margin: 0.6rem auto;
+}
+.er-subtitle {
+  font-size: 0.75rem;
+  color: rgba(178,166,108,0.6);
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Form body ── */
+.er-form {
+  padding: 1.8rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* ── Field ── */
+.er-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.er-label {
+  font-family: var(--font-meta);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gimblet);
+}
+
+/* ── Input / Select / Textarea shared base ── */
+.er-input,
+.er-select,
+.er-textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(178,166,108,0.35);
+  border-radius: 2px;
+  color: var(--color-akaroa);
+  font-family: var(--font-meta);
+  font-size: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.er-input::placeholder,
+.er-textarea::placeholder {
+  color: rgba(178,166,108,0.35);
+  font-style: italic;
+}
+.er-input:focus,
+.er-select:focus,
+.er-textarea:focus {
+  border-color: var(--color-gimblet);
+  box-shadow: 0 0 10px rgba(178,166,108,0.2);
+}
+.er-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b2a66c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+.er-select option {
+  background: #1a160f;
+  color: var(--color-akaroa);
+}
+.er-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Error state */
+.er-input-error {
+  border-color: #b94040 !important;
+  box-shadow: 0 0 8px rgba(185,64,64,0.25);
+}
+.er-error {
+  color: #d97070;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Radio group ── */
+.er-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin-top: 0.15rem;
+}
+.er-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-akaroa);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.er-radio-label:hover { color: var(--color-gimblet); }
+.er-radio {
+  accent-color: var(--color-gimblet);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* ── Checkbox ── */
+.er-checkbox-field {
+  border: 1px solid rgba(178,166,108,0.2);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  background: rgba(178,166,108,0.04);
+}
+.er-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: var(--color-akaroa);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.er-checkbox {
+  accent-color: var(--color-gimblet);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+/* ── Char count ── */
+.er-char-count {
+  font-size: 0.68rem;
+  color: rgba(178,166,108,0.45);
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.er-char-warn { color: #d97070; }
+
+/* ── Submit ── */
+.er-submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.er-btn {
+  font-family: var(--font-meta);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a160f;
+  background: linear-gradient(135deg, #d5c27a 0%, #b2a66c 50%, #c9b87a 100%);
+  border: none;
+  border-radius: 2px;
+  padding: 0.75rem 2.2rem;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(178,166,108,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.er-btn:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 4px 20px rgba(178,166,108,0.45);
+}
+.er-btn:active { transform: scale(0.97); }
+.er-btn-rune {
+  opacity: 0.7;
+  margin: 0 0.3rem;
+}
+.er-btn:disabled {
+  filter: grayscale(0.6);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Success ── */
+.er-success {
+  text-align: center;
+  color: var(--color-gimblet);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(178,166,108,0.3);
+  border-radius: 2px;
+  padding: 0.9rem 1rem;
+  background: rgba(178,166,108,0.07);
+  line-height: 1.6;
+}
+
+/* ── Footer ── */
+.er-footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(178,166,108,0.25), transparent);
+}
+.er-footer {
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: rgba(178,166,108,0.3);
+  padding: 0.8rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Number input spinners ── */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { opacity: 0.3; }

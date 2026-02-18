@@ -1,0 +1,165 @@
+<div class="er-page">
+
+  <div class="er-card">
+
+    <!-- Header -->
+    <div class="er-header">
+      <div class="er-rune-left">ᚱ</div>
+      <div>
+        <div class="er-eyebrow">The Erdtree Beckons</div>
+        <h1 class="er-title">Tarnished Registration</h1>
+        <div class="er-divider"></div>
+        <p class="er-subtitle">Seek the Elden Ring. Become Elden Lord.</p>
+      </div>
+      <div class="er-rune-right">ᚱ</div>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="er-form" novalidate>
+
+      <!-- Tarnished Name -->
+      <div class="er-field">
+        <label class="er-label">Tarnished Name</label>
+        <input
+          class="er-input"
+          [class.er-input-error]="isInvalid('tarnishedName')"
+          type="text"
+          formControlName="tarnishedName"
+          placeholder="e.g. Margit the Fell"
+        />
+        @if (isInvalid('tarnishedName')) {
+          <small class="er-error">
+            @if (form.get('tarnishedName')?.errors?.['required']) { Name is required. }
+            @else if (form.get('tarnishedName')?.errors?.['minlength']) { Name must be at least 3 characters. }
+            @else if (form.get('tarnishedName')?.errors?.['maxlength']) { Name must be 20 characters or fewer. }
+            @else if (form.get('tarnishedName')?.errors?.['pattern']) { Only letters, numbers, spaces, hyphens and apostrophes allowed. }
+          </small>
+        }
+      </div>
+
+      <!-- Runes Carried -->
+      <div class="er-field">
+        <label class="er-label">Runes Carried</label>
+        <input
+          class="er-input"
+          [class.er-input-error]="isInvalid('runes')"
+          type="number"
+          formControlName="runes"
+          placeholder="0 – 999,999,999"
+          min="0"
+          max="999999999"
+        />
+        @if (isInvalid('runes')) {
+          <small class="er-error">
+            @if (form.get('runes')?.errors?.['required']) { Rune count is required. }
+            @else if (form.get('runes')?.errors?.['min']) { Runes cannot be negative. }
+            @else if (form.get('runes')?.errors?.['max']) { You cannot carry more than 999,999,999 runes. }
+          </small>
+        }
+      </div>
+
+      <!-- Starting Class -->
+      <div class="er-field">
+        <label class="er-label">Starting Class</label>
+        <select
+          class="er-select"
+          [class.er-input-error]="isInvalid('startingClass')"
+          formControlName="startingClass"
+        >
+          <option value="" disabled>— Choose your origin —</option>
+          @for (c of classes; track c) {
+            <option [value]="c">{{ c }}</option>
+          }
+        </select>
+        @if (isInvalid('startingClass')) {
+          <small class="er-error">You must choose a starting class.</small>
+        }
+      </div>
+
+      <!-- Covenant -->
+      <div class="er-field">
+        <label class="er-label">Covenant</label>
+        <div class="er-radio-group">
+          @for (cov of covenants; track cov) {
+            <label class="er-radio-label">
+              <input type="radio" name="covenant" [value]="cov" formControlName="covenant" class="er-radio" />
+              {{ cov }}
+            </label>
+          }
+        </div>
+        @if (isInvalid('covenant')) {
+          <small class="er-error">You must pledge to a covenant.</small>
+        }
+      </div>
+
+      <!-- Birthplace -->
+      <div class="er-field">
+        <label class="er-label">Birthplace</label>
+        <select
+          class="er-select"
+          [class.er-input-error]="isInvalid('birthplace')"
+          formControlName="birthplace"
+        >
+          <option value="" disabled>— Where do you hail from? —</option>
+          @for (b of birthplaces; track b) {
+            <option [value]="b">{{ b }}</option>
+          }
+        </select>
+        @if (isInvalid('birthplace')) {
+          <small class="er-error">Birthplace is required.</small>
+        }
+      </div>
+
+      <!-- Oath -->
+      <div class="er-field">
+        <label class="er-label">Oath to the Erdtree</label>
+        <textarea
+          class="er-textarea"
+          [class.er-input-error]="isInvalid('oath')"
+          formControlName="oath"
+          rows="4"
+          placeholder="Speak your oath to the Erdtree… (10–200 characters)"
+        ></textarea>
+        @if (isInvalid('oath')) {
+          <small class="er-error">
+            @if (form.get('oath')?.errors?.['required']) { An oath is required. }
+            @else if (form.get('oath')?.errors?.['minlength']) { Oath must be at least 10 characters. }
+            @else if (form.get('oath')?.errors?.['maxlength']) { Oath must be 200 characters or fewer. }
+          </small>
+        }
+        <div class="er-char-count" [class.er-char-warn]="(form.get('oath')?.value?.length ?? 0) > 180">
+          {{ form.get('oath')?.value?.length ?? 0 }} / 200
+        </div>
+      </div>
+
+      <!-- Agree to Erdtree -->
+      <div class="er-field er-checkbox-field">
+        <label class="er-checkbox-label">
+          <input type="checkbox" formControlName="agreeToErdtree" class="er-checkbox" />
+          I swear fealty to the Erdtree and accept its grace upon my cursed existence.
+        </label>
+        @if (isInvalid('agreeToErdtree')) {
+          <small class="er-error">You must swear fealty to proceed.</small>
+        }
+      </div>
+
+      <!-- Submit -->
+      <div class="er-submit-row">
+        <button class="er-btn" type="submit">
+          <span class="er-btn-rune">⚔</span> Enter the Lands Between <span class="er-btn-rune">⚔</span>
+        </button>
+      </div>
+
+      <!-- Success message -->
+      @if (submitted && form.valid) {
+        <div class="er-success">
+          <span>✦</span> Your legend has been inscribed, {{ form.get('tarnishedName')?.value }}. May grace guide your sword. <span>✦</span>
+        </div>
+      }
+
+    </form>
+
+    <div class="er-footer-divider"></div>
+    <p class="er-footer">† Those without grace shall be maidenless forever †</p>
+  </div>
+
+</div>
