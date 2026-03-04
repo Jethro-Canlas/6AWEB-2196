@@ -1,0 +1,235 @@
+/* Hearts of Iron Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #1a1208;
+  color: #d4b97a;
+  font-family: 'IM Fell English', serif;
+}
+
+/* ── Background ── */
+.hoi-bg {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(10,8,4,0.82), rgba(10,8,4,0.82)),
+    url('https://www.transparenttextures.com/patterns/old-map.png');
+  background-color: #1a1208;
+  padding: 32px 16px;
+}
+
+/* ── Container ── */
+.hoi-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.hoi-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-top: 3px solid #8a6a1e;
+  border-bottom: 3px solid #8a6a1e;
+  padding: 14px 0;
+  margin-bottom: 28px;
+  background: linear-gradient(90deg, transparent, rgba(138,106,30,0.15), transparent);
+}
+
+.hoi-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  letter-spacing: 6px;
+  color: #e8c96a;
+  text-shadow: 0 0 18px rgba(232,201,106,0.5);
+  text-transform: uppercase;
+}
+
+.hoi-header.small h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  color: #e8c96a;
+}
+
+.hoi-eagle {
+  font-size: 1.6rem;
+  color: #c9a227;
+  text-shadow: 0 0 10px rgba(201,162,39,0.6);
+}
+
+/* ── Panel ── */
+.hoi-panel {
+  background: linear-gradient(160deg, #211a0a, #1a1208);
+  border: 1px solid #5a4510;
+  border-top: 3px solid #8a6a1e;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,162,39,0.1);
+}
+
+.panel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: #c9a227;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #3a2d0a;
+  padding-bottom: 10px;
+}
+
+/* ── Form ── */
+.hoi-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hoi-input {
+  flex: 1 1 180px;
+  background: #120f05;
+  border: 1px solid #5a4510;
+  border-bottom: 2px solid #8a6a1e;
+  color: #d4b97a;
+  padding: 9px 12px;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hoi-input:focus {
+  border-color: #c9a227;
+  box-shadow: 0 0 8px rgba(201,162,39,0.3);
+}
+
+.hoi-input option { background: #1a1208; }
+
+/* ── Button ── */
+.hoi-btn {
+  background: linear-gradient(180deg, #6b4f10, #3d2d06);
+  border: 1px solid #8a6a1e;
+  border-bottom: 2px solid #c9a227;
+  color: #e8c96a;
+  padding: 9px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.hoi-btn:hover {
+  background: linear-gradient(180deg, #8a6a1e, #5a4510);
+  box-shadow: 0 0 12px rgba(201,162,39,0.4);
+}
+
+.hoi-btn.small { padding: 6px 14px; font-size: 0.75rem; }
+
+.hoi-btn.danger {
+  background: linear-gradient(180deg, #5c1a1a, #2e0d0d);
+  border-color: #7a2a2a;
+  border-bottom-color: #c02020;
+  color: #e87070;
+}
+
+.hoi-btn.danger:hover {
+  background: linear-gradient(180deg, #7a2a2a, #4a1010);
+  box-shadow: 0 0 12px rgba(200,30,30,0.4);
+}
+
+/* ── Officer Card ── */
+.officer-card {
+  border: 1px solid #3a2d0a;
+  border-left: 4px solid #8a6a1e;
+  background: rgba(255,255,255,0.02);
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+
+.officer-card:hover { background: rgba(201,162,39,0.05); }
+
+.officer-card.inactive {
+  border-left-color: #4a3a3a;
+  opacity: 0.65;
+}
+
+.officer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.officer-rank {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: #8a6a1e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.officer-name {
+  font-size: 1.1rem;
+  color: #e8c96a;
+  font-weight: bold;
+}
+
+.officer-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  letter-spacing: 2px;
+  border: 1px solid;
+}
+
+.officer-badge.active   { color: #4caf50; border-color: #4caf50; background: rgba(76,175,80,0.1); }
+.officer-badge.inactive-badge { color: #888; border-color: #555; background: rgba(100,100,100,0.1); }
+
+.officer-details {
+  font-size: 0.88rem;
+  color: #a08840;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.officer-actions { display: flex; gap: 8px; }
+
+/* ── Empty ── */
+.empty-msg {
+  text-align: center;
+  color: #5a4510;
+  font-style: italic;
+  letter-spacing: 2px;
+  padding: 20px 0;
+}
+
+/* ── Dialog ── */
+.hoi-dialog {
+  background: #1a1208;
+  border: 1px solid #5a4510;
+  border-top: 3px solid #8a6a1e;
+  color: #d4b97a;
+  padding: 28px;
+  min-width: 380px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.9);
+}
+
+.hoi-dialog::backdrop {
+  background: rgba(0,0,0,0.75);
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: flex-end;
+}

@@ -1,0 +1,79 @@
+<div class="hoi-bg">
+  <div class="hoi-container">
+
+    <!-- Header -->
+    <div class="hoi-header">
+      <span class="hoi-eagle">✠</span>
+      <h1>OFFICER REGISTRY</h1>
+      <span class="hoi-eagle">✠</span>
+    </div>
+
+    <!-- Add Officer Panel -->
+    <div class="hoi-panel">
+      <h2 class="panel-title">⚔ ENLIST NEW OFFICER</h2>
+      <div class="hoi-form">
+        <input id="newName"    class="hoi-input" placeholder="Full Name" />
+        <input id="newRank"    class="hoi-input" placeholder="Rank (e.g. General)" />
+        <select id="newStatus" class="hoi-input">
+          <option value="" disabled selected>Deployment Status</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>        <input id="newTheater" class="hoi-input" placeholder="Theater (e.g. Eastern Front)" />
+        <input id="newBranch"  class="hoi-input" placeholder="Branch (e.g. Army, Navy, Air Force)" />
+        <button class="hoi-btn" (click)="addOfficer()">▶ ENLIST</button>
+      </div>
+    </div>
+
+    <!-- Officers List -->
+    <div class="hoi-panel">
+      <h2 class="panel-title">⚑ OFFICER ROSTER</h2>
+
+      @for (officer of officers; track officer.id) {
+        <div class="officer-card" [class.inactive]="officer.status === 'Inactive'">
+          <div class="officer-info">
+            <span class="officer-rank">{{ officer.rank }}</span>
+            <span class="officer-name">{{ officer.name }}</span>
+            <span class="officer-badge" [class.active]="officer.status === 'Active'" [class.inactive-badge]="officer.status === 'Inactive'">
+              {{ officer.status }}
+            </span>
+          </div>
+          <div class="officer-details">            <span>🌍 {{ officer.theater }}</span>
+            <span>★ {{ officer.branch }}</span>
+          </div>
+          <div class="officer-actions">
+            <button class="hoi-btn small" (click)="editOfficer(officer.id)">✎ EDIT</button>
+            <button class="hoi-btn small danger" (click)="deleteOfficer(officer.id)">✖ DISMISS</button>
+          </div>
+        </div>
+      } @empty {
+        <p class="empty-msg">— No officers on record —</p>
+      }
+    </div>
+
+  </div>
+</div>
+
+<!-- Edit Officer Dialog -->
+<dialog id="editDialog" class="hoi-dialog">
+  <div class="hoi-header small">
+    <span class="hoi-eagle">✠</span>
+    <h3>EDIT OFFICER DOSSIER</h3>
+    <span class="hoi-eagle">✠</span>
+  </div>
+  <input id="editId" type="hidden">
+  <div class="hoi-form">
+    <input id="editName"    class="hoi-input" placeholder="Full Name" />
+    <input id="editRank"    class="hoi-input" placeholder="Rank" />
+    <select id="editStatus" class="hoi-input">
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+    </select>    <input id="editTheater" class="hoi-input" placeholder="Theater" />
+    <input id="editBranch"  class="hoi-input" placeholder="Branch (e.g. Army, Navy, Air Force)" />
+  </div>
+  <div class="dialog-actions">
+    <button class="hoi-btn" (click)="updateOfficer()">✔ UPDATE</button>
+    <button class="hoi-btn danger" onclick="document.getElementById('editDialog').close()">✖ CANCEL</button>
+  </div>
+</dialog>
+
+<router-outlet />
